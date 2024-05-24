@@ -36,3 +36,6 @@ function Marquee(selector, speed) {
     kerangpanci.style.top = (650) - value*0.3 + 'px';
     ikankuning.style.top = -90 + (value*0.1) + 'px';
   })
+
+
+  console.log("wadow")
