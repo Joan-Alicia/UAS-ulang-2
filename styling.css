@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass+Mono:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import url('animation.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: "Overpass Mono", monospace;
+    background-color: #FFFCF5;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar{
+    opacity: 100;
+    width: 16px;
+    background-color: #F2EFDC;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: #693C3C;
+    border-radius: 20px;
+  }
+
+  .song{
+    visibility: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+  section {
+    height: 100vh;
+  }
+  header {
+    position: relative;
+    height: 64px;
+    backdrop-filter: blur(6px); /* Menerapkan efek blur */
+    -webkit-backdrop-filter: blur(6px); /* Untuk dukungan browser WebKit */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 252, 245, 0.7);
+    border-radius: 0px 0px 20px 20px;
+    padding: 0px;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-content: center;
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .logo{
+      text-decoration: none;
+      list-style-type: none;
+      padding-top: 17px;
+      margin-left: 40px;
+      font-size: 25px;
+      font-weight: 550;
+
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: auto 0;
+  }
+  .menu > li {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    align-content: center;
+    margin-right: 40px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+
+  .menu > li:hover {
+    color: #693C3C;
+  }
+
+  .menu > li:last-child {
+    color: #F2EFDC;
+    background-color: #69623C;
+    padding: 9px 20px 5px 20px;
+  }
+
+  .menu > li:last-child:hover {
+    color: #F2EFDC;
+    background-color: #693C3C;
+    padding: 9px 20px 5px 20px;
+  }
+
+  .hero {
+    background-image: url("Assets/Background\ our\ kitchen\ crop\ 2.jpg");
+    background-color: #F2EFDC;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero > .container {
+    max-width: 1200px;
+    display: flex;
+    padding-top: 48px;
+    justify-content: right;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+  }
+  .wrapper {
+    margin-top: 0px;
+    margin-left: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .wrapper > .our{
+    margin-left: 320px;
+    font-size: 48px;
+    font-weight: 400;
+  }
+
+  .wrapper > .kitchen{
+    margin-left: 370px;
+    padding-bottom: 40px;
+    font-size: 48px;
+    font-weight: 400;
+  }
+
+  .wrapper > h1 {
+    margin-bottom: 5px;
+    font-family: "Overpass Mono", monospace;
+    font-size: 30px;
+    font-weight:500;
+  }
+
+  .experience {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    padding: 56px 20px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .experience::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F2EFDC; /* Warna latar belakang */
+    z-index: 0; /* Pastikan berada di belakang konten */
+    filter: blur(10px); /* Efek blur */
+    transform: scale(1.1); /* Mencegah garis tepi dari blur */
+  }
+
+  .experience > h1{
+    overflow-y: visible;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Benar-benar menempatkan teks di tengah kontainer */
+    font-size: 240px; /* Ukuran besar untuk teks */
+    letter-spacing: 12px;
+    color: rgba(218, 209, 151, 0.5);
+    filter: blur(8px);
+    white-space: nowrap; /* Pastikan teks tidak terbungkus */
+    z-index: 0; /* Pastikan teks berada di belakang elemen lain */
+  }
+
+  .experience > .ikankuning{
+    position: absolute;
+    right: -7em;
+    top: -6em;
+    width: 320px
+  }
+
+  .experience > .container{
+    position: relative;
+    display: flex;
+    padding-top: 56px;
+    justify-content: right;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1200px;
+    z-index: 2;
+  }
+
+  .gambarkiri img{
+    width: 340px;
+    height:fit-content;
+    border-radius: 30px;
+    margin-left: 64px;
+  }
+
+  .textkanan{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    margin-left: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-top: 64px;
+  }
+
+  .buttontextkanan > button{
+    margin-top: 20px;
+    padding: 15px 30px 10px 30px;
+    border-radius:30px;
+    border: none;
+    font-family: "Overpass Mono", monospace;
+    font-size: 20px;
+    font-weight:400;
+    color: #FFFCF5;
+    background-color: #69623C;
+    filter: none;
+  }
+
+  .buttontextkanan > button:hover{
+    background-color: #693C3C;
+  }
+
+
+  .threebest{
+    position: relative;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 240px;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 120px;
+  }
+
+  .threebest::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F2EFDC; /* Warna latar belakang */
+    z-index: -1; /* Pastikan berada di belakang konten */
+    filter: blur(20px); /* Efek blur */
+    transform: scale(1.1); /* Mencegah garis tepi dari blur */
+  }
+
+  .bestprice{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bestprice img{
+    width: 110px;
+    margin-left: 16px;
+    margin-bottom: 10px;
+  }
+
+  .bestview{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bestview img {
+    width: 160px;
+    margin-bottom: 29px;
+  }
+
+  .bestservice{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bestservice img {
+    width: 140px;
+    margin-bottom: 25px;
+  }
+
+  .threebest > .kerangpanci{
+    position: absolute;
+    left: -5em;
+    top: 12em;
+    width: 400px
+  }
+
+  .judulourpack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 130px;
+  font-size: 48px;
+  font-weight: 400;
+  }
+
+  .ourpack {
+    display: flex;
+    flex-direction: row;
+    gap: 240px;
+    margin-top: 120px;
+    justify-content: center;
+    height: 500px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 28px;
+  }
+
+  .lunchdinner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lunchdinner img{
+    width: 240px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  .weddingparteh {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .weddingparteh img{
+    width: 240px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  .specialset {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .specialset img{
+    width: 240px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  .learnmore {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical  centering */
+    text-align: center;
+    max-height: 160px; /* Atur tinggi sesuai kebutuhan */
+    text-align: center;
+    width: 100%;
+  }
+
+  .learnmore > p {
+    position: relative;
+    font-size: 25px; /* Ukuran font untuk paragraf */
+    font-family: "Montserrat Alternates", sans-serif;
+    margin-top: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: rgba(213, 204, 150, 0.5);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .learnmore > p:hover {
+    background-color:rgba(105, 60, 60, 0.5);
+    color:#FFFCF5;
+    cursor: pointer;
+  }
+  
+  .textlearnmore{
+    display:flex;
+    overflow:hidden;
+  }
+  
+  .textlearnmore > h1 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Benar-benar menempatkan teks di tengah kontainer */
+    font-size: 300px; /* Ukuran besar untuk teks */
+    word-spacing: -150px;
+    color: transparent;
+    -webkit-text-stroke: 2px #9B8D35;
+    filter: blur(8px);
+    white-space: nowrap; /* Pastikan teks tidak terbungkus */
+    z-index: -1; /* Pastikan teks berada di belakang elemen lain */
+  }
+  
+  .populardish{
+    margin-top: 180px;
+  }
+
+  .judulpopdish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    font-size: 48px;
+    font-weight: 400;
+  }
+
+  .marqueedish{
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+  .marqueedish img{
+    margin-top: 120px;
+    max-width: none;
+    max-height: 100%;
+    object-fit: contain;
+    display: inline-block;
+  }
+
+  .testimoni{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 1000px;
+    justify-content: space-between;
+    overflow:hidden;
+  } 
+
+  .testimoni::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 98.5%;
+    background-color: #F2EFDC; /* Warna latar belakang */
+    z-index: -1; /* Pastikan berada di belakang konten */
+    filter: blur(10px); /* Efek blur */
+    transform: scale(1,1); /* Mencegah garis tepi dari blur */
+  }
+
+  .parallax {
+    position: relative;
+  }
+  .parallax > .kerangbulet{
+    position: absolute;
+    right: -5em;
+    top: -15em;
+    display:flex;
+    object-fit: cover;
+    width: 400px;
+    z-index: 4;
+  }
+  .parallax > .lodehbulet{
+    position: absolute;
+    left: -6em;
+    bottom: -88em;
+    width: 400px;
+    display: flex;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* .testimoni > .kerangbulet{
+    position: absolute;
+    right: -5em;
+    top: -15em;
+    width: 400px;
+    z-index: 2;
+  } */
+  
+  /* .testimoni > .lodehbulet{
+    position: absolute;
+    left: -6em;
+    bottom: -24em;
+    width: 400px;
+    z-index: 1;
+  } */
+
+  .wts1, .wts2 {
+    max-width: 128px;
+    position: relative;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 0;
+    font-size: 24px;
+    word-spacing: 4px;
+    font-family: "Lora", serif;
+    color: #69623C;
+  }
+  
+  .wts1 {
+    text-align: left; /* Opsional: Align text di kiri */
+  }
+  
+  .wts2 {
+    text-align: right; /* Opsional: Align text di kanan */
+  }
+  
+  .wts1 > p{
+    transform: rotate(-90deg); /* Memutar teks 90 derajat */
+    white-space: nowrap;
+    margin-top: 1000px;
+  }
+
+  .wts2 > p{
+    transform: rotate(90deg); /* Memutar teks 90 derajat */
+    white-space: nowrap;
+    margin-top: -120px;
+  }
+
+  .testi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 32px;
+    margin-top: 12px;
+    width: 1600px;
+  }
+
+  .testi1{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-right: 160px;
+    margin-right: 560px;
+    white-space: nowrap;
+  }
+
+  .testi1 > h5{
+    font-size: 20px;
+  }
+
+  .testi1 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi2{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-right: 230px;
+    margin-left: 560px;
+    white-space: nowrap;
+  }
+
+  .testi2 > h5{
+    font-size: 20px;
+  }
+
+  .testi2 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi3{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 32px;
+    padding-bottom: 30px;
+    padding-right: 320px;
+    margin-right: 560px;
+  }
+
+  .testi3 > h5{
+    font-size: 20px;
+  }
+
+  .testi3 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi4{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-right: 220px;
+    margin-left: 560px;
+    white-space: nowrap;
+  }
+
+  .testi4 > h5{
+    font-size: 20px;
+  }
+
+  .testi4 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi5{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-right: 170px;
+    margin-right: 560px;
+    white-space: nowrap;
+  }
+
+  .testi5 > h5{
+    font-size: 20px;
+  }
+
+  .testi5 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi6{
+    display: inline-block;
+    background-color: #FFFCF5;
+    border-radius: 24px;
+    padding-left:32px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-right: 280px;
+    margin-left: 560px;
+  }
+
+  .testi6 > h5{
+    font-size: 20px;
+  }
+
+  .testi6 > p{
+    font-size: 16px;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .testi > button{
+    margin-top: 12px;
+    padding: 24px 96px 20px 96px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FFFCF5;
+    font-family: "Overpass Mono", monospace;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .testi > button:hover{
+    background-color: #69623C;
+    color: #FFFCF5;
+  }
+
+
+  .imagebuletgede{
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagebuletgede img{
+    margin-top: -290px;
+    margin-left: 100px;
+    overflow: hidden;
+    z-index: -2;
+  }
+
+  .kontak{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 120px;
+    margin-bottom: 16px;
+  }
+
+  .kontak img{
+    width: 24px;
+  }
+
+  .contactus > p{
+    margin-left: 40px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .icon{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 24px;
+  }
+
+  .icon img{
+    width: 52px;
+    height: 52px;
+  }
+
+  .icon > button{
+    padding: 13px 32px 10px 32px;
+    border-radius: 25px;
+    color: #FFFCF5;
+    border: none;
+    background-color: #69623C;
+    font-family: "Overpass Mono", monospace;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .icon > button:hover{
+    background-color: #693C3C;
+  }
+
+  .backtop{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 40px;
+    margin-top: -24px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .backtop img{
+    width: 16px;
+  }
+
+  .backtop > p:hover {
+    color:#693C3C;
+    cursor: pointer;
+  }
